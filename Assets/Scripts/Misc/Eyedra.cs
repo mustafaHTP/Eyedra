@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Irisaour : MonoBehaviour
+public class Eyedra : MonoBehaviour
 {
     private TrackAreaStatus _trackAreaStatus;
 

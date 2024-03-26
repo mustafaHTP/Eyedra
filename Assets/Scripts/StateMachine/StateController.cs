@@ -10,17 +10,17 @@ public class StateMachineController : MonoBehaviour
     [Space(5)]
     [SerializeField] private float _irisMovementCircleRadius;
 
+    //states
     private IState _currentState;
     private IdleState _idleState;
     private ResetState _resetState;
     private TrackState _trackState;
 
-    private Irisaour _irisaour;
+    private Eyedra _eyedra;
     private SharedDataSO _sharedData;
-    private TrackAreaStatus _trackAreaStatus;
 
     public SharedDataSO SharedData { get => _sharedData; private set => _sharedData = value; }
-    public TrackAreaStatus TrackAreaStatus { get => _irisaour.TrackAreaStatus; }
+    public TrackAreaStatus TrackAreaStatus { get => _eyedra.TrackAreaStatus; }
     public IdleState IdleState => _idleState;
     public TrackState TrackState => _trackState;
     public ResetState ResetState => _resetState;
@@ -34,7 +34,7 @@ public class StateMachineController : MonoBehaviour
 
     private void Awake()
     {
-        _irisaour = GetComponentInParent<Irisaour>();
+        _eyedra = GetComponentInParent<Eyedra>();
 
         InitSharedData();
         InitStates();
