@@ -19,6 +19,7 @@ public class StateMachineController : MonoBehaviour
     private Eyedra _eyedra;
     private SharedDataSO _sharedData;
 
+    public string CurrentStateName { get; set; }
     public SharedDataSO SharedData { get => _sharedData; private set => _sharedData = value; }
     public TrackAreaStatus TrackAreaStatus { get => _eyedra.TrackAreaStatus; }
     public IdleState IdleState => _idleState;
@@ -44,6 +45,7 @@ public class StateMachineController : MonoBehaviour
     {
         _currentState.OnStateUpdate(this);
         print($"Current State: {_currentState.GetType().Name}");
+        CurrentStateName = _currentState.GetType().Name;
     }
 
     private void InitSharedData()
